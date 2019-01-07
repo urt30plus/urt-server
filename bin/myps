@@ -1,0 +1,5 @@
+#!/bin/bash
+
+clear
+echo "Processes for ${USER}"
+ps -ef | grep "${USER}"
