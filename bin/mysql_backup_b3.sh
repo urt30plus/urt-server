@@ -1,5 +1,5 @@
 #!/bin/bash
-BACKUP_DIR=/ssd/urt/b3/sql
+BACKUP_DIR=/ssd/urt/backups/b3
 ARCHIVE_DIR=${HOME}/backups/b3_db
 
 if [[ -z $B3_DB_USER ]]; then
