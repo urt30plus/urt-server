@@ -11,6 +11,6 @@ WantedBy=multi-user.target
 [Service]
 User=urtadmin
 Group=urtadmin
-PIDFile=/ssd/urt/b3/logs/b3.pid
+PIDFile=/ssd/urt/run/b3.pid
 ExecStart=/ssd/urt/bin/start_b3.sh
 LimitNOFILE=5000

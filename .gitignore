@@ -1,3 +1,5 @@
-UrbanTerror43/
 b3/
-logs/*.log
+logs/*.log*
+logs/b3_status.xml
+run/*.pid
+UrbanTerror43/

@@ -3,7 +3,6 @@
 urt_gameslog=/ssd/urt/UrbanTerror43/q3ut4/games.log
 urt_rcon_port=27961
 b3_base=/ssd/urt/b3
-b3_app_dir=big-brother-bot-3.30.3
 b3_stdout=/ssd/urt/logs/b3_run.log
 
 echo "$(date): Starting B3" >${b3_stdout}
@@ -35,6 +34,6 @@ while [[  $COUNTER -gt 0 ]]; do
 done
 
 TERM=vt100
-nohup ${HOME}/.pyenv/b3/bin/python -u ${b3_base}/${b3_app_dir}/b3_run.py -c ${b3_base}/conf/b3.xml >>${b3_stdout} 2>&1 &
+nohup ${HOME}/.pyenv/b3/bin/python -u ${b3_base}/b3_run.py -c ${b3_base}/b3/conf/b3.xml >>${b3_stdout} 2>&1 &
 
-echo $! >${b3_base}/logs/b3.pid
+echo $! >/ssd/urt/run/b3.pid
