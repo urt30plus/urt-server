@@ -10,8 +10,8 @@ echo "$(date): cleaning up games.log"
 su - urtadmin -c /ssd/urt/bin/gameslog_cleanup.sh
 
 echo "$(date): updating OS packages"
-apt-get --yes --quit update
-apt-get --yes --quit upgrade
+apt-get --yes --quiet update
+apt-get --yes --quiet upgrade
 
 echo "$(date): rebooting"
 reboot
