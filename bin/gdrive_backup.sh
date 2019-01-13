@@ -13,4 +13,4 @@ cp --verbose /ssd/urt/b3/b3/conf/b3.xml "${config_dir}"
 
 crontab -l >"${config_dir}/crontab.txt"
 
-drive push -verbose -no-prompt "${HOME}/gdrive/backups/$(hostname)"
+timeout 5m drive push -verbose -depth 25 -no-prompt "${HOME}/gdrive/backups/$(hostname)"
