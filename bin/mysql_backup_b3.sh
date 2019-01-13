@@ -1,7 +1,7 @@
 #!/bin/bash
 BACKUP_DIR="/ssd/urt/backups/b3_db"
 ARCHIVE_DIR="${HOME}/backups/b3_db"
-GDRIVE_BACKUP_DIR="${HOME}/gdrive/backups/b3_db"
+GDRIVE_BACKUP_DIR="${HOME}/gdrive/backups/$(hostname)/b3_db"
 
 if [[ -z $B3_DB_USER ]]; then
     echo "B3_DB_USER env var must be defined"
@@ -35,4 +35,4 @@ echo "delete old archived backup files"
 find ${ARCHIVE_DIR}/ -mindepth 1 -type f -name '*.tar.gz' -mtime +180 -delete
 
 echo "archiving backup to Google Drive"
-cp --verbose "${ARCHIVE_FILE}" "${GDRIVE_BACKUP_DIR}/${B3_DB_NAME}_backup-$(hostname).tar.gz"
+cp --verbose "${ARCHIVE_FILE}" "${GDRIVE_BACKUP_DIR}/${B3_DB_NAME}_backup.tar.gz"

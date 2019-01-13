@@ -1,7 +1,7 @@
 #!/bin/bash
 GAMESLOG_FILE="/ssd/urt/UrbanTerror43/q3ut4/games.log"
-GAMESLOG_ARCHIVE_DIR="${HOME}/gdrive/backups/game_logs"
-GAMESLOG_ARCHIVE_FILE="${GAMESLOG_ARCHIVE_DIR}/games-$(hostname).log"
+GAMESLOG_ARCHIVE_DIR="${HOME}/gdrive/backups/$(hostname)/game_logs"
+GAMESLOG_ARCHIVE_FILE="${GAMESLOG_ARCHIVE_DIR}/games.log"
 
 if [[ ! -e "${GAMESLOG_FILE}" ]]; then
     echo "$(date): games.log file not found: ${GAMESLOG_FILE}"
