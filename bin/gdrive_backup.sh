@@ -5,6 +5,7 @@ gdrive_dir="${HOME}/gdrive/backups/$(hostname)"
 config_dir="${gdrive_dir}/configs"
 
 cp --verbose ${HOME}/.profile "${config_dir}/dot_profile"
+cp --verbose /lib/systemd/system/urt43_* "${config_dir}"
 cp --verbose /ssd/urt/UrbanTerror43/q3ut4/server.cfg "${config_dir}"
 cp --verbose /ssd/urt/UrbanTerror43/q3ut4/q3config.cfg "${config_dir}"
 cp --verbose /ssd/urt/UrbanTerror43/q3ut4/banlist.txt "${config_dir}"
