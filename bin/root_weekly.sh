@@ -14,4 +14,4 @@ apt-get --yes --quiet update
 apt-get --yes --quiet upgrade
 
 echo "$(date): rebooting"
-reboot
+/sbin/reboot
