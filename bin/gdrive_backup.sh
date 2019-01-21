@@ -10,6 +10,7 @@ cp --verbose /ssd/urt/UrbanTerror43/q3ut4/server.cfg "${config_dir}"
 cp --verbose /ssd/urt/UrbanTerror43/q3ut4/q3config.cfg "${config_dir}"
 cp --verbose /ssd/urt/UrbanTerror43/q3ut4/banlist.txt "${config_dir}"
 cp --verbose /ssd/urt/b3/b3/conf/b3.{ini,xml} "${config_dir}"
+cp --verbose /ssd/urt/logs/b3.log* "${config_dir}"
 
 crontab -l >"${config_dir}/crontab.txt"
 
