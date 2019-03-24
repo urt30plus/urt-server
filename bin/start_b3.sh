@@ -1,9 +1,9 @@
 #!/bin/bash
 
-urt_gameslog=/ssd/urt/UrbanTerror43/q3ut4/games.log
+urt_gameslog=/game/UrbanTerror43/q3ut4/games.log
 urt_rcon_port=27961
-b3_base=/ssd/urt/b3
-b3_stdout=/ssd/urt/logs/b3_run.log
+b3_base=/game/b3
+b3_stdout=/game/logs/b3_run.log
 
 echo "$(date): Starting B3" >${b3_stdout}
 
@@ -36,4 +36,4 @@ done
 TERM=vt100
 nohup ${HOME}/.pyenv/b3/bin/python -u ${b3_base}/b3_run.py -c ${b3_base}/b3/conf/b3.ini >>${b3_stdout} 2>&1 &
 
-echo $! >/ssd/urt/run/b3.pid
+echo $! >/game/run/b3.pid

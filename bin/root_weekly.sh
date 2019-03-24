@@ -7,7 +7,7 @@ echo "$(date): stopping game service"
 systemctl stop urt43_game
 
 echo "$(date): cleaning up games.log"
-su - urtadmin -c /ssd/urt/bin/gameslog_cleanup.sh
+su - urtadmin -c /game/bin/gameslog_cleanup.sh
 
 echo "$(date): updating OS packages"
 apt-get --yes --quiet update

@@ -1,5 +1,5 @@
 #!/bin/bash
-BACKUP_DIR="/ssd/urt/backups/b3_db"
+BACKUP_DIR="/game/backups/b3_db"
 ARCHIVE_DIR="${HOME}/backups/b3_db"
 GDRIVE_BACKUP_DIR="${HOME}/gdrive/backups/$(hostname)/b3_db"
 
