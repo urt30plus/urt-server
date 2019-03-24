@@ -1,5 +1,5 @@
 b3/
 logs/*.log*
 logs/b3_status.xml
-run/*.pid
+run/
 UrbanTerror43/
