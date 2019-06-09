@@ -10,6 +10,7 @@ cp --verbose /game/UrbanTerror43/q3ut4/server.cfg "${config_dir}"
 cp --verbose /game/UrbanTerror43/q3ut4/q3config.cfg "${config_dir}"
 cp --verbose /game/UrbanTerror43/q3ut4/autoexec.cfg "${config_dir}"
 cp --verbose /game/UrbanTerror43/q3ut4/banlist.txt "${config_dir}"
+cp --verbose /game/UrbanTerror43/q3ut4/mapcycle.txt "${config_dir}"
 cp --verbose /game/b3/b3/conf/b3.{ini,xml} "${config_dir}"
 cp --verbose /game/logs/b3.log* "${config_dir}"
 
