@@ -7,7 +7,7 @@ echo "$(date): stopping game service"
 sudo systemctl stop urt43_game
 
 echo "$(date): cleaning up games.log"
-/game/bin/gameslog_cleanup.sh
+/ssd/game/bin/gameslog_cleanup.sh
 
 echo "$(date): updating OS packages"
 sudo apt-get --yes --quiet update

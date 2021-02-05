@@ -1,0 +1,19 @@
+# 30plus UrT systemd service file
+
+[Unit]
+Description=UrT 4.3 Server
+After=network.target
+
+[Install]
+WantedBy=multi-user.target
+
+[Service]
+Type=forking
+User=urtadmin
+Group=urtadmin
+PIDFile=/ssd/game/run/urt43.pid
+ExecStart=/ssd/game/bin/start_urt.sh
+ExecStop=/ssd/game/bin/stop_urt.sh
+TimeoutSec=600
+Restart=on-failure
+LimitNOFILE=5000

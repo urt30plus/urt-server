@@ -1,6 +1,6 @@
 #!/bin/bash
-B3_DB_FILE="/game/run/b3_db.sqlite"
-BACKUP_DIR="/game/backups/b3_db"
+B3_DB_FILE="/ssd/game/run/b3_db.sqlite"
+BACKUP_DIR="/ssd/game/backups/b3_db"
 ARCHIVE_DIR="${HOME}/backups/b3_db"
 GDRIVE_BACKUP_DIR="${HOME}/gdrive/backups/$(hostname)/b3_db"
 

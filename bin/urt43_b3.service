@@ -1,0 +1,18 @@
+# 30plus B3 systemd service file
+
+[Unit]
+Description=UrT 4.3 B3
+After=network.target mysql.service urt43_game.service
+
+[Install]
+WantedBy=multi-user.target
+
+[Service]
+User=urtadmin
+Group=urtadmin
+PIDFile=/ssd/game/run/b3.pid
+ExecStart=/ssd/game/bin/start_b3.sh
+ExecStop=/ssd/game/bin/stop_b3.sh
+TimeoutSec=600
+Restart=on-failure
+LimitNOFILE=5000
