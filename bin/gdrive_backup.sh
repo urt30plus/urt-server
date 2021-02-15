@@ -9,14 +9,11 @@ cp --verbose ${HOME}/.profile "${config_dir}/dot_profile"
 cp --verbose /lib/systemd/system/urt43_* "${config_dir}"
 
 cp --verbose /ssd/game/b3/b3/conf/b3.{ini,xml} "${config_dir}"
-cp --verbose /ssd/game/logs/b3.log* "${config_dir}"
+cp --verbose /ssd/game/logs/b3.log "${config_dir}"
 
 cp --verbose /ssd/game/UrbanTerror43/q3ut4/*.cfg "${config_dir}"
 cp --verbose /ssd/game/UrbanTerror43/q3ut4/*.txt "${config_dir}"
 
-
-#cp --verbose /ssd/game/UrbanTerror43_tourney/q3ut4/*.cfg "${config_dir}/tourney"
-#cp --verbose /ssd/game/UrbanTerror43_tourney/q3ut4/*.txt "${config_dir}/tourney"
 
 crontab -l >"${config_dir}/crontab.txt"
 
