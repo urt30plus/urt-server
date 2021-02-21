@@ -13,5 +13,8 @@ echo "$(date): updating OS packages"
 sudo apt-get --yes --quiet update
 sudo apt-get --yes --quiet upgrade
 
-echo "$(date): rebooting"
-sudo /sbin/reboot
+echo "$(date): starting game service"
+sudo systemctl start urt43_game
+
+echo "$(date): starting b3 service"
+sudo systemctl start urt43_b3
