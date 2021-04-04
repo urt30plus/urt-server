@@ -12,5 +12,5 @@ echo "$(date): archiving ${GAMESLOG_FILE}"
 cp --verbose --force --backup=simple --suffix=".old" "${GAMESLOG_FILE}" "${GAMESLOG_ARCHIVE_FILE}"
 
 if [[ ! -e "/ssd/game/run/urt43.pid" ]]; then
-    rm --verbose --force "${GAMESLOG_FILE}"
+    cat /dev/null >"${GAMESLOG_FILE}"
 fi

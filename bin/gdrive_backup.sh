@@ -14,6 +14,7 @@ cp --verbose /ssd/game/logs/b3.log "${config_dir}"
 cp --verbose /ssd/game/UrbanTerror43/q3ut4/*.cfg "${config_dir}"
 cp --verbose /ssd/game/UrbanTerror43/q3ut4/*.txt "${config_dir}"
 
+cp --verbose /opt/spunkybot/conf/*.conf "${gdrive_dir}/spunkybot/conf/"
 
 crontab -l >"${config_dir}/crontab.txt"
 

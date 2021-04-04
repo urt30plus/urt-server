@@ -3,5 +3,5 @@ logs/*.log*
 logs/b3_status.xml
 run/
 UrbanTerror43*/
-ioq3/
+ioq3*/
 tmp/
