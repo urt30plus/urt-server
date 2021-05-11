@@ -2,6 +2,7 @@ b3/
 logs/*.log*
 logs/b3_status.xml
 run/
+spunkybot/
 UrbanTerror43*/
 ioq3*/
 tmp/

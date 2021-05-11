@@ -10,9 +10,9 @@ WantedBy=multi-user.target
 [Service]
 User=urtadmin
 Group=urtadmin
-PIDFile=/ssd/game/run/b3.pid
-ExecStart=/ssd/game/bin/start_b3.sh
-ExecStop=/ssd/game/bin/stop_b3.sh
+PIDFile=/game/run/b3.pid
+ExecStart=/game/bin/start_b3.sh
+ExecStop=/game/bin/stop_b3.sh
 TimeoutSec=600
 Restart=on-failure
 LimitNOFILE=5000

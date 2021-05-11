@@ -1,6 +1,6 @@
 #!/bin/bash
-DB_FILE="/opt/spunkybot/data.sqlite"
-BACKUP_DIR="/ssd/game/backups/spunkybot_db"
+DB_FILE="/game/spunkybot/data.sqlite"
+BACKUP_DIR="/game/backups/spunkybot_db"
 ARCHIVE_DIR="${HOME}/backups/spunkybot_db"
 GDRIVE_BACKUP_DIR="${HOME}/gdrive/backups/$(hostname)/spunkybot_db"
 

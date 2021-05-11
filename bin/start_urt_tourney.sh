@@ -1,8 +1,8 @@
 #!/bin/bash
 
-urt_home=/ssd/game/UrbanTerror43_tourney
-urt_env=/ssd/game/run/urt_tourney.env
-urt_stdout=/ssd/game/logs/urt43_tourney_run.log
+urt_home=/game/UrbanTerror43_tourney
+urt_env=/game/run/urt_tourney.env
+urt_stdout=/game/logs/urt43_tourney_run.log
 
 echo "$(date): Starting UrT 4.3" >${urt_stdout}
 
@@ -28,7 +28,7 @@ nohup ${URT_EXE} \
 	+exec server.cfg >/dev/null 2>>${urt_stdout} &
 
 URT_PID=$!
-echo $URT_PID >/ssd/game/run/urt43_tourney.pid
+echo $URT_PID >/game/run/urt43_tourney.pid
 
 #ionice -c 2 -n 2 -p $URT_PID
 #sudo renice -2 $B3_PID

@@ -1,9 +1,9 @@
 #!/bin/bash
 
-urt_gameslog=/ssd/game/UrbanTerror43/q3ut4/games.log
+urt_gameslog=/game/UrbanTerror43/q3ut4/games.log
 urt_rcon_port=27961
-b3_base=/ssd/game/b3
-b3_stdout=/ssd/game/logs/b3_run.log
+b3_base=/game/b3
+b3_stdout=/game/logs/b3_run.log
 
 echo "$(date): Starting B3" >${b3_stdout}
 
@@ -37,7 +37,7 @@ TERM=vt100
 nohup ${b3_base}/venv/bin/python -B -u ${b3_base}/b3_run.py -c ${b3_base}/b3/conf/b3.ini >>${b3_stdout} 2>&1 &
 
 B3_PID=$!
-echo $B3_PID >/ssd/game/run/b3.pid
+echo $B3_PID >/game/run/b3.pid
 
 #ionice -c 2 -n 3 -p $URT_PID
 #sudo renice -1 $B3_PID
