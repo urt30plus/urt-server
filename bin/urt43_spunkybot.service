@@ -16,3 +16,5 @@ ExecStop=/game/bin/stop_spunkybot.sh
 TimeoutSec=600
 Restart=on-failure
 LimitNOFILE=5000
+StandardOutput=null
+Type=simple

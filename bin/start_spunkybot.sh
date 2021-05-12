@@ -33,7 +33,7 @@ while [[  $COUNTER -gt 0 ]]; do
     sleep 2
 done
 
-nohup python2 -B -u ${spunkybot_base}/spunkybot.py >>${spunkybot_stdout} 2>&1 &
+nohup python2 -B -u ${spunkybot_base}/spunky.py >>${spunkybot_stdout} 2>&1 &
 
 SPUNKYBOT_PID=$!
 echo $SPUNKYBOT_PID >/game/run/spunkybot.pid
