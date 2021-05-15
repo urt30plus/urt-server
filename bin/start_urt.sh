@@ -29,6 +29,3 @@ nohup ${URT_EXE} \
 
 URT_PID=$!
 echo $URT_PID >/game/run/urt43.pid
-
-#ionice -c 2 -n 1 -p $URT_PID
-#sudo renice -3 $B3_PID

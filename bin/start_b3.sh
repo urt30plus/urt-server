@@ -38,6 +38,3 @@ nohup ${b3_base}/venv/bin/python -B -u ${b3_base}/b3_run.py -c ${b3_base}/b3/con
 
 B3_PID=$!
 echo $B3_PID >/game/run/b3.pid
-
-#ionice -c 2 -n 3 -p $URT_PID
-#sudo renice -1 $B3_PID
