@@ -2,7 +2,7 @@
 
 [Unit]
 Description=UrT 4.3 B3
-After=network.target mysql.service urt43_game.service
+After=network.target urt43_game.service
 
 [Install]
 WantedBy=multi-user.target
