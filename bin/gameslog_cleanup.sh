@@ -1,6 +1,6 @@
 #!/bin/bash
 GAMESLOG_FILE="/game/UrbanTerror43/q3ut4/games.log"
-GAMESLOG_ARCHIVE_DIR="${HOME}/gdrive/backups/$(hostname)/game_logs"
+GAMESLOG_ARCHIVE_DIR="/game/logs"
 GAMESLOG_ARCHIVE_FILE="${GAMESLOG_ARCHIVE_DIR}/games.log"
 
 if [[ ! -e "${GAMESLOG_FILE}" ]]; then
