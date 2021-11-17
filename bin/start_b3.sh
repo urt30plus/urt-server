@@ -1,6 +1,6 @@
 #!/bin/bash
 
-urt_gameslog=/game/UrbanTerror43/q3ut4/games.log
+urt_gameslog=/game/servers/main/q3ut4/games.log
 urt_rcon_port=27961
 b3_base=/game/b3
 b3_stdout=/game/logs/b3_run.log

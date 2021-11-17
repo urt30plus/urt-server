@@ -1,7 +1,7 @@
 # 30plus UrT systemd service file
 
 [Unit]
-Description=UrT 4.3 Server
+Description=UrT 4.3 Gun Game
 After=network.target
 
 [Install]
@@ -11,9 +11,9 @@ WantedBy=multi-user.target
 Type=forking
 User=urtadmin
 Group=urtadmin
-PIDFile=/game/run/urt43_main.pid
-ExecStart=/game/bin/start_urt.sh
-ExecStop=/game/bin/stop_urt.sh
-TimeoutSec=30
+PIDFile=/game/run/urt43_gungame.pid
+ExecStart=/game/bin/start_urt_gungame.sh
+ExecStop=/game/bin/stop_urt_gungame.sh
+TimeoutSec=600
 Restart=on-failure
 LimitNOFILE=5000

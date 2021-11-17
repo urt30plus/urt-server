@@ -1,5 +1,5 @@
 #!/bin/bash
-GAMESLOG_FILE="/game/UrbanTerror43/q3ut4/games.log"
+GAMESLOG_FILE="/game/servers/main/q3ut4/games.log"
 GAMESLOG_ARCHIVE_DIR="/game/logs"
 GAMESLOG_ARCHIVE_FILE="${GAMESLOG_ARCHIVE_DIR}/games.log"
 
@@ -11,6 +11,6 @@ fi
 echo "$(date): archiving ${GAMESLOG_FILE}"
 cp --verbose --force --backup=simple --suffix=".old" "${GAMESLOG_FILE}" "${GAMESLOG_ARCHIVE_FILE}"
 
-if [[ ! -e "/game/run/urt43.pid" ]]; then
+if [[ ! -e "/game/run/urt43_main.pid" ]]; then
     cat /dev/null >"${GAMESLOG_FILE}"
 fi

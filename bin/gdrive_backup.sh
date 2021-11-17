@@ -11,8 +11,8 @@ cp --verbose /lib/systemd/system/urt43_* "${config_dir}"
 cp --verbose /game/b3/b3/conf/b3.ini "${config_dir}"
 cp --verbose /game/logs/b3.log "${config_dir}"
 
-cp --verbose /game/UrbanTerror43/q3ut4/*.cfg "${config_dir}"
-cp --verbose /game/UrbanTerror43/q3ut4/*.txt "${config_dir}"
+cp --verbose /game/servers/main/q3ut4/*.cfg "${config_dir}"
+cp --verbose /game/servers/main/q3ut4/*.txt "${config_dir}"
 
 cp --verbose /etc/sysctl.conf "${config_dir}"
 

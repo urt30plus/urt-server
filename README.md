@@ -1,16 +1,33 @@
 UrT Game Server
 ===============
 
-Environment Variables
-------------------------------
+# Binaries
 
-`URT_EXE`
+Various server binaries are kept in the `/game` directory. For example:
 
-Optional Environment Variables
-------------------------------
+```
+/game/ioq3urt-m9
+/game/ioq3urt-d3mod
+```
 
-The following are optional if using MySQL as the storage engine for B3:
+# Servers
 
-`B3_DB_USER`
-`B3_DB_PASS`
-`B3_DB_NAME`
+The `/game/servers` directory contains the various game servers.
+
+`base434` - This is the base official install, directory is read-only.
+
+_IMPORTANT_: do not add/modify files in this directory. Put configs and maps
+in the other specific server directories. Also, game logs will be stored in
+the server specific directories.
+
+`scrim` - Scrim server
+
+`gungame_d3mod` - Gun Game d3 mod server
+
+`main` - Main `|30+| urt-30plus.org` server
+
+
+# Scripts
+
+Various scripts are stored in the `/game/bin` directory and they allow for
+starting and stopping the various servers.
