@@ -1,6 +1,6 @@
 #!/bin/bash
 
-urt_base=/game/servers/base434
+urt_base=/game/UrbanTerror43
 urt_home=/game/servers/gungame_d3mod
 urt_stdout=/game/logs/urt43_run_gungame.log
 

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-urt_base=/game/servers/base434
+urt_base=/game/UrbanTerror43
 urt_home=/game/servers/scrim
 urt_stdout=/game/logs/urt43_run_scrim.log
 

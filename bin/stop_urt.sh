@@ -1,7 +1,5 @@
 #!/bin/bash
 
-urt_base=/game/servers/base434
-urt_home=/game/servers/main
 urt_stdout=/game/logs/urt43_run_main.log
 
 echo "$(date): Stopping UrT 4.3" >>${urt_stdout}
