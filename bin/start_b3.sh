@@ -34,7 +34,8 @@ while [[  $COUNTER -gt 0 ]]; do
 done
 
 TERM=vt100
-nohup ${b3_base}/venv/bin/python -B -u ${b3_base}/b3_run.py -c ${b3_base}/b3/conf/b3.ini >>${b3_stdout} 2>&1 &
+cd ${b3_base}
+nohup ./venv/bin/python3.9 -B -u -m b3 -c ~/.b3/b3.ini >>${b3_stdout} 2>&1 &
 
 B3_PID=$!
 echo $B3_PID >/game/run/b3.pid
