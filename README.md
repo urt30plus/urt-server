@@ -14,15 +14,13 @@ Various server binaries are kept in the `/game` directory. For example:
 
 The `/game/servers` directory contains the various game servers.
 
-`base434` - This is the base official install, directory is read-only.
+`/game/UrbanTerror43` - This is the base official install, directory is read-only.
 
 _IMPORTANT_: do not add/modify files in this directory. Put configs and maps
 in the other specific server directories. Also, game logs will be stored in
 the server specific directories.
 
 `scrim` - Scrim server
-
-`gungame_d3mod` - Gun Game d3 mod server
 
 `main` - Main `|30+| urt-30plus.org` server
 
