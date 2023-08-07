@@ -36,7 +36,7 @@ done
 TERM=vt100
 cd ${b3_base}
 #nohup /usr/bin/python3.9 -B -u -m b3 -c ~/.b3/b3_scrim.ini >>${b3_stdout} 2>&1 &
-nohup /game/run/python3.11.3/bin/python3.11 -B -u -m b3 -c ~/.b3/b3_scrim.ini >>${b3_stdout} 2>&1 &
+nohup /game/run/python3.11.4/bin/python3.11 -B -u -m b3 -c ~/.b3/b3_scrim.ini >>${b3_stdout} 2>&1 &
 
 B3_PID=$!
 echo $B3_PID >/game/run/b3_scrim.pid
