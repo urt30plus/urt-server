@@ -1,0 +1,18 @@
+# 30plus B3 systemd service file
+
+[Unit]
+Description=UrT 4.3 B3 Main
+After=network.target urt43_main.service
+
+[Install]
+WantedBy=multi-user.target
+
+[Service]
+User=urtadmin
+Group=urtadmin
+PIDFile=/game/run/b3_main.pid
+ExecStart=/game/bin/b3.sh main
+ExecStop=/game/bin/b3.sh main stop
+TimeoutSec=600
+Restart=on-failure
+LimitNOFILE=5000

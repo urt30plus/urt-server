@@ -1,7 +1,7 @@
 # 30plus UrT systemd service file
 
 [Unit]
-Description=UrT 4.3 Scrim
+Description=UrT 4.3 TS
 After=network.target
 
 [Install]
@@ -11,9 +11,9 @@ WantedBy=multi-user.target
 Type=forking
 User=urtadmin
 Group=urtadmin
-PIDFile=/game/run/urt43_scrim.pid
-ExecStart=/game/bin/start_urt_scrim.sh
-ExecStop=/game/bin/stop_urt_scrim.sh
+PIDFile=/game/run/urt43_ts.pid
+ExecStart=/game/bin/urt43.sh ts
+ExecStop=/game/bin/urt43.sh ts stop
 TimeoutSec=30
 Restart=on-failure
 LimitNOFILE=5000

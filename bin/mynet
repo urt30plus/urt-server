@@ -1,5 +1,0 @@
-#!/bin/bash
-
-clear
-echo "Connections for ${USER}"
-netstat -an | grep -v unix

@@ -1,8 +1,8 @@
 # 30plus B3 systemd service file
 
 [Unit]
-Description=UrT 4.3 B3
-After=network.target urt43_game.service
+Description=UrT 4.3 B3 TS
+After=network.target urt43_ts.service
 
 [Install]
 WantedBy=multi-user.target
@@ -10,9 +10,9 @@ WantedBy=multi-user.target
 [Service]
 User=urtadmin
 Group=urtadmin
-PIDFile=/game/run/b3.pid
-ExecStart=/game/bin/start_b3.sh
-ExecStop=/game/bin/stop_b3.sh
+PIDFile=/game/run/b3_ts.pid
+ExecStart=/game/bin/b3.sh ts
+ExecStop=/game/bin/b3.sh ts stop
 TimeoutSec=600
 Restart=on-failure
 LimitNOFILE=5000

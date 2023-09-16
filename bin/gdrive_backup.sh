@@ -2,6 +2,9 @@
 
 gdrive_dir="${HOME}/gdrive/backups/$(hostname)"
 config_dir="${gdrive_dir}/configs"
+config_dir_ts="${gdrive_dir}/configs_ts"
+
+mkdir -p "${config_dir_ts}"
 
 cp --verbose ${HOME}/.profile "${config_dir}/dot_profile"
 cp --verbose ${HOME}/.ssh/authorized_keys "${config_dir}"
@@ -13,6 +16,9 @@ cp --verbose /game/logs/b3.log "${config_dir}"
 
 cp --verbose /game/servers/main/q3ut4/*.cfg "${config_dir}"
 cp --verbose /game/servers/main/q3ut4/*.txt "${config_dir}"
+
+cp --verbose /game/servers/ts/q3ut4/*.cfg "${config_dir_ts}"
+cp --verbose /game/servers/ts/q3ut4/*.txt "${config_dir_ts}"
 
 cp --verbose /etc/sysctl.conf "${config_dir}"
 
