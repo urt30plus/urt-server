@@ -3,17 +3,19 @@
 urt_slot=${1}
 urt_action=${2}
 
-if [[ $urt_slot != "71" && $urt_slot != "72" && $urt_slot != "73" ]]; then
-   echo "invalid urt_slot: ${urt_slot}"
-   exit 1
-fi
-
 urt_base=/game/UrbanTerror43
 urt_home=/game/servers/private
 urt_port="279${urt_slot}"
 urt_stdout=/game/logs/urt43_run_private_${urt_slot}.log
 urt_pidfile=/game/run/urt43_private_${urt_slot}.pid
 urt_games_log="games_${urt_slot}.log"
+urt_cfg="server_${urt_slot}.cfg"
+urt_cfg_path="${urt_home}/q3ut4/${urt_cfg}"
+
+if [[ ! -e ${urt_cfg_path} ]]; then
+   echo "invalid slot [${urt_slot}], server cfg not found: ${urt_cfg_path}"
+   exit 1
+fi
 
 echo "$(date): UrT 4.3 private $urt_action" >${urt_stdout}
 
@@ -36,6 +38,6 @@ nohup ${urt_base}/Quake3-UrT-Ded.x86_64 \
 	+set com_hunkmegs 512 \
 	+set g_log "games_${urt_slot}.log" \
 	+set ttycon 0 \
-	+exec server_${urt_slot}.cfg >/dev/null 2>>${urt_stdout} &
+	+exec $urt_cfg >/dev/null 2>>${urt_stdout} &
 
 echo $! >"${urt_pidfile}"

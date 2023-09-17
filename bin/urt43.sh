@@ -3,16 +3,21 @@
 server=${1}
 action=${2}
 
-if [[ $server != "main" && $server != "ts" ]]; then
-    echo "invalid server: $server"
-    exit 1
-fi
-
 urt_base=/game/UrbanTerror43
 urt_home=/game/servers/${server}
 urt_env=/game/etc/urt43_${server}.env
 urt_stdout=/game/logs/urt43_run_${server}.log
 urt_pidfile=/game/run/urt43_${server}.pid
+
+if [[ ! -d ${urt_home} ]]; then
+    echo "invalid server [${server}], missing home: $urt_home"
+    exit 1
+fi
+
+if [[ ! -e ${urt_env} ]]; then
+    echo "missing env file: $urt_env"
+    exit 1
+fi
 
 source "${urt_env}"
 

@@ -3,16 +3,16 @@
 server=${1}
 action=${2}
 
-if [[ $server != "main" && $server != "ts" ]]; then
-    echo "invalid server: $server"
-    exit 1
-fi
-
 urt_gameslog=/game/servers/${server}/q3ut4/games.log
 urt_env=/game/etc/urt43_${server}.env
 b3_base=/game/b3
 b3_stdout=/game/logs/b3_run_${server}.log
 b3_pidfile=/game/run/b3_${server}.pid
+
+if [[ ! -e ${urt_env} ]]; then
+    echo "invalid server [${server}], missing env file: $urt_env"
+    exit 1
+fi
 
 source "${urt_env}"
 
