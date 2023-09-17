@@ -4,7 +4,7 @@ urt_slot=${1}
 urt_action=${2}
 
 if [[ $urt_slot != "71" && $urt_slot != "72" && $urt_slot != "73" ]]; then
-   echo "invalid urt_slot: ${urt_slot}" >${urt_stdout}
+   echo "invalid urt_slot: ${urt_slot}"
    exit 1
 fi
 
@@ -36,6 +36,6 @@ nohup ${urt_base}/Quake3-UrT-Ded.x86_64 \
 	+set com_hunkmegs 512 \
 	+set g_log "games_${urt_slot}.log" \
 	+set ttycon 0 \
-	+exec server.cfg >/dev/null 2>>${urt_stdout} &
+	+exec server_${urt_slot}.cfg >/dev/null 2>>${urt_stdout} &
 
 echo $! >"${urt_pidfile}"
