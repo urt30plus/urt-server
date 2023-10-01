@@ -20,9 +20,9 @@ _IMPORTANT_: do not add/modify files in this directory. Put configs and maps
 in the other specific server directories. Also, game logs will be stored in
 the server specific directories.
 
-`scrim` - Scrim server
-
 `main` - Main `|30+| urt-30plus.org` server
+
+`ts` - TS server
 
 
 # Scripts
