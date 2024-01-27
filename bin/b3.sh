@@ -56,7 +56,7 @@ done
 
 TERM=vt100
 cd ${b3_base}
-nohup /game/run/python3.11.4/bin/python3.11 -B -u -m b3 -c ~/.b3/b3_${server}.ini >>${b3_stdout} 2>&1 &
+nohup /game/run/python3.11.7/bin/python3.11 -B -u -m b3 -c ~/.b3/b3_${server}.ini >>${b3_stdout} 2>&1 &
 
 B3_PID=$!
 echo $B3_PID >${b3_pidfile}
