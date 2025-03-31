@@ -2,7 +2,7 @@
 
 server=${1}
 
-if [[ $server != "main" && $server != "ts"  && $server != "wave" ]]; then
+if [[ $server != "main" && $server != "ts"  && $server != "private" ]]; then
     echo "invalid server: $server"
     exit 1
 fi
