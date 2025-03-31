@@ -1,0 +1,19 @@
+# 30plus UrT systemd service file
+
+[Unit]
+Description=UrT 4.3 Private Slot 74
+After=network.target
+
+[Install]
+WantedBy=multi-user.target
+
+[Service]
+Type=forking
+User=urtadmin
+Group=urtadmin
+PIDFile=/game/run/urt43_private_74.pid
+ExecStart=/game/bin/urt43_private.sh 74
+ExecStop=/game/bin/urt43_private.sh 74 stop
+TimeoutSec=30
+Restart=on-failure
+LimitNOFILE=5000
