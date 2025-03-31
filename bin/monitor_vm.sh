@@ -1,5 +1,9 @@
 #!/bin/bash
 
-interval=${1:-10}
-
-vmstat -a --unit M --timestamp ${interval} |tee /game/logs/monitor_vm.log
+while :
+do
+    vmstat --unit M --timestamp 2 5
+    top -b -n 1 |head -n 14 |tail -n 8
+    netstat -anus
+    sleep 5
+done
