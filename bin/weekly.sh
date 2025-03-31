@@ -11,12 +11,12 @@ sudo systemctl stop urt30t_ts
 echo "$(date): stopping game service"
 sudo systemctl stop urt43_main
 sudo systemctl stop urt43_ts
-sudo systemctl stop urt43_wave
+sudo systemctl stop urt43_private
 
 echo "$(date): cleaning up games.log"
 /game/bin/gameslog_cleanup.sh main
 /game/bin/gameslog_cleanup.sh ts
-/game/bin/gameslog_cleanup.sh wave
+/game/bin/gameslog_cleanup.sh private
 
 echo "$(date): updating OS packages"
 sudo apt-get --yes --quiet update
