@@ -1,16 +1,15 @@
-UrT Game Server
-===============
+# 30+ UrT Game Server
 
-# Binaries
+## Binaries
 
 Various server binaries are kept in the `/game` directory. For example:
 
 ```
-/game/ioq3urt-m9
+/game/UrbanTerror43
 /game/ioq3urt-d3mod
 ```
 
-# Servers
+## Servers
 
 The `/game/servers` directory contains the various game servers.
 
@@ -24,8 +23,7 @@ the server specific directories.
 
 `ts` - TS server
 
-
-# Scripts
+## Scripts
 
 Various scripts are stored in the `/game/bin` directory and they allow for
 starting and stopping the various servers.
