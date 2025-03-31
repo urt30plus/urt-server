@@ -8,7 +8,7 @@ if [[ $server != "main" && $server != "ts" ]]; then
 fi
 
 DB_FILE="/game/run/b3_db_${server}.sqlite"
-BACKUP_DIR="${HOME}/backups/b3_db"
+BACKUP_DIR="${HOME}/backups/$(hostname)/b3_db"
 
 mkdir -p ${BACKUP_DIR}
 
