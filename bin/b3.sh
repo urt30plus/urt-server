@@ -56,7 +56,7 @@ done
 
 TERM=vt100
 cd ${b3_base}
-nohup /game/b3/.venv/bin/python -B -u -m b3 -c ~/.b3/b3_${server}.ini >>${b3_stdout} 2>&1 &
+nohup taskset -c 1 /game/b3/.venv/bin/python -B -u -m b3 -c ~/.b3/b3_${server}.ini >>${b3_stdout} 2>&1 &
 
 B3_PID=$!
 echo $B3_PID >${b3_pidfile}

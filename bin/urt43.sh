@@ -40,7 +40,7 @@ else
     echo "$(date): env var URT_EXE set to [${URT_EXE}]"
 fi
 
-nohup ${URT_EXE} \
+nohup taskset -c 0 ${URT_EXE} \
 	+set fs_game q3ut4 \
 	+set fs_basepath ${urt_base} \
 	+set fs_homepath ${urt_home} \
