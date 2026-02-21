@@ -7,8 +7,8 @@ if [[ $server != "ctf" && $server != "ts" ]]; then
     exit 1
 fi
 
-GAMESLOG_FILE="/game/servers/${server}/q3ut4/games.log"
-GAMESLOG_ARCHIVE_DIR="/game/logs"
+GAMESLOG_FILE="$HOME/servers/${server}/q3ut4/games.log"
+GAMESLOG_ARCHIVE_DIR="$HOME/logs"
 GAMESLOG_ARCHIVE_FILE="${GAMESLOG_ARCHIVE_DIR}/games_${server}.log"
 
 if [[ ! -e "${GAMESLOG_FILE}" ]]; then
@@ -18,7 +18,3 @@ fi
 
 echo "$(date): archiving ${GAMESLOG_FILE}"
 cp --verbose --force --backup=simple --suffix=".old" "${GAMESLOG_FILE}" "${GAMESLOG_ARCHIVE_FILE}"
-
-if [[ ! -e "/game/run/urt43_${server}.pid" ]]; then
-    cat /dev/null >"${GAMESLOG_FILE}"
-fi
