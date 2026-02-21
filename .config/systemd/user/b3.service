@@ -1,18 +1,13 @@
-# 30plus B3 systemd service file
-
 [Unit]
 Description=UrT 4.3 B3 TS
-After=network.target urt43.service
+After=urt43.service
 
 [Install]
 WantedBy=default.target
 
 [Service]
-User=urtadmin
-Group=urtadmin
-PIDFile=/home/urtadmin/run/b3_ts.pid
-ExecStart=/home/urtadmin/bin/b3.sh ts
-ExecStop=/home/urtadmin/bin/b3.sh ts stop
+WorkingDirectory=/home/urtadmin/b3
+ExecStart=taskset -c 1 /home/urtadmin/b3/.venv/bin/python -B -u -m b3 -c /home/urtadmin/.config/b3/ts.ini
 TimeoutSec=600
 Restart=on-failure
 LimitNOFILE=5000

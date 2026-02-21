@@ -1,18 +1,14 @@
 [Unit]
 Description=UrT 4.3 Game/Discord Bot
 AssertPathExists=/home/urtadmin/urt30t
-After=network.target urt43.service
+After=urt43.service
 
 [Install]
 WantedBy=default.target
 
 [Service]
-User=urtadmin
-Group=urtadmin
 Restart=on-failure
 RestartSec=3
 EnvironmentFile=/home/urtadmin/.config/urt30t/env.ts
 WorkingDirectory=/home/urtadmin/urt30t
 ExecStart=taskset -c 2 /home/urtadmin/urt30t/.venv/bin/python -m urt30t
-ExecReload=/bin/kill -s HUP $MAINPID
-ExecStop=/bin/kill -s TERM $MAINPID
