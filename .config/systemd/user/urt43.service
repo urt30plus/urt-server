@@ -1,5 +1,3 @@
-# 30plus UrT systemd service file
-
 [Unit]
 Description=UrT 4.3
 After=network.target
@@ -8,12 +6,8 @@ After=network.target
 WantedBy=default.target
 
 [Service]
-Type=forking
-User=urtadmin
-Group=urtadmin
-PIDFile=/home/urtadmin/run/urt43_ts.pid
-ExecStart=/home/urtadmin/bin/urt43.sh ts
-ExecStop=/home/urtadmin/bin/urt43.sh ts stop
+Type=simple
+ExecStart=taskset -c 0 /home/urtadmin/share/UrbanTerror43/Quake3-UrT-Ded.x86_64 +set fs_game q3ut4 +set fs_basepath /home/urtadmin/share/UrbanTerror43 +set fs_homepath /home/urtadmin/servers/ts +set dedicated 2 +set net_port 27965 +set com_hunkmegs 512 +set ttycon 0 +exec server.cfg
 TimeoutSec=30
 Restart=on-failure
 LimitNOFILE=5000
