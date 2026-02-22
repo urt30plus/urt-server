@@ -2,15 +2,11 @@
 .gitconfig
 
 b3/
-ioq3*/
-logs/*.log*
-logs/b3_status.xml
-run/
+backups/
+logs/
 servers/
 share/
-tmp/
 temp/
 urt30t/
-UrbanTerror43*/
 
 !.config/systemd/user/*
