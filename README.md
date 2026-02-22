@@ -8,7 +8,7 @@ Run as the root user, all other commands should be run as the `urtadmin` user.
 useradd -m -s /bin/bash -c "UrT Server Daemon" urtadmin \
   && loginctl enable-linger urtadmin \
   && apt-get update \
-  && apt-get -y install unzip git git-lfs
+  && apt-get -y install unzip git git-lfs sqlite3
 ```
 
 ## Daemon account home directory setup
