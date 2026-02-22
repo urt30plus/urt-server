@@ -11,7 +11,7 @@ cp --verbose ${HOME}/.ssh/* "${backup_dir}"
 cp --verbose /etc/sysctl.conf "${backup_dir}"
 crontab -l >"${backup_dir}/crontab.txt"
 
-cp --verbose ~/.config/b3/${server}.ini "${backup_dir}"
+cp --verbose ~/.config/b3/b3_${server}.ini "${backup_dir}"
 cp --verbose ~/.config/urt30t/env.${server} "${backup_dir}"
 cp --verbose $HOME/servers/${server}/q3ut4/*.{cfg,txt} "${backup_dir}"
 

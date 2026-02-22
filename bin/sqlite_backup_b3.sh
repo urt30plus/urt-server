@@ -7,7 +7,7 @@ if [[ $server != "ctf" && $server != "ts" ]]; then
     exit 1
 fi
 
-DB_FILE="$HOME/run/b3_db_${server}.sqlite"
+DB_FILE="$HOME/.config/b3/b3_db_${server}.sqlite"
 BACKUP_DIR="${HOME}/backups/${GAME_HOSTNAME}/b3_db"
 
 mkdir -p ${BACKUP_DIR}
