@@ -5,7 +5,8 @@
 Run as the root user, all other commands should be run as the `urtadmin` user.
 
 ```bash
-useradd -m -s /bin/bash -c "UrT Server Daemon" urtadmin \
+hostnamectl set-hostname game-{ctf,ts,promod}.urt-30plus.org \
+  && useradd -m -s /bin/bash -c "UrT Server Daemon" urtadmin \
   && loginctl enable-linger urtadmin \
   && apt-get update \
   && apt-get -y install unzip git git-lfs sqlite3
@@ -24,7 +25,7 @@ git config --global user.email urt30plus@gmail.com \
   && cd $HOME \
   && mv $HOME/temp/* . \
   && mv $HOME/temp/.* . \
-  && echo ". \$HOME/.config/urt30plus/env" >> .profile \
+  && echo '. "$HOME/.config/urtadmin.env"' >> .profile \
   && git clone git@github.com:urt30plus/b3.git \ 
   && git clone git@github.com:urt30plus/urt30t.git \ 
   && curl -LsSf https://astral.sh/uv/install.sh | sh \
@@ -46,6 +47,13 @@ $HOME/share/UrbanTerror43
 $HOME/share/urt-slim
 ```
 
+To start the `urt43` server you must create a symlink to the server binary you
+wish to run:
+
+```bash
+ln -s ~/share/UrbanTerror43/Quake3-UrT-Ded.x86_64 ~/share/UrT-Ded.x86_64
+```
+
 ## Servers
 
 The `$HOME/servers` directory contains the various game servers.
@@ -60,6 +68,9 @@ the server specific directories.
 
 The systemd service files are kept in `$HOME/.config/systemd/user`. The following
 command are required in order to set up the services.
+
+To configure the server binary and port, copy the `~/.config/urtserver.env.sample` file
+to `~/.config/urtserver.env` and adjust the settings as needed.
 
 ```bash
 systemctl --user daemon-reload

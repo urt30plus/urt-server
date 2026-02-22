@@ -7,13 +7,12 @@ WantedBy=default.target
 
 [Service]
 Type=exec
-Environment="URT_EXE=%h/share/UrbanTerror43/Quake3-UrT-Ded.x86_64"
-#Environment="URT_EXE=%h/share/urtslim/urtslim.ded.x64"
-#Environment="URT_EXE=%h/share/ioq3urt-d3mod/Quake3-UrT-Ded.x86_64"
-Environment="URT_BASE=%h/share/UrbanTerror43"
-Environment="URT_HOME=%h/servers/ts"
-Environment="URT_PORT=27965"
-ExecStart=taskset -c 0 $URT_EXE +set fs_game q3ut4 +set fs_basepath $URT_BASE +set fs_homepath $URT_HOME +set dedicated 2 +set net_port $URT_PORT +set com_hunkmegs 512 +set ttycon 0 +exec server.cfg
-TimeoutSec=30
+CPUAffinity=0
+EnvironmentFile=%h/.config/urtserver.env
+ExecStart=%h/share/UrT-Ded.x86_64 +set fs_game q3ut4 +set fs_basepath %h/share/UrbanTerror43 +set fs_homepath %h/server +set dedicated 2 +set net_port $URT_PORT +set com_hunkmegs 512 +set ttycon 0 +exec server.cfg
 Restart=on-failure
+RestartSec=5
+RestartSteps=15
+RestartMaxDelaySec=60
+TimeoutSec=30
 LimitNOFILE=5000

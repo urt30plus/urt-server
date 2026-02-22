@@ -1,20 +1,13 @@
 #!/bin/bash
 
-server=${1}
-
-if [[ $server != "ctf" && $server != "ts" ]]; then
-    echo "invalid server: $server"
-    exit 1
-fi
-
-DB_FILE="$HOME/.config/b3/b3_db_${server}.sqlite"
-BACKUP_DIR="${HOME}/backups/${GAME_HOSTNAME}/b3_db"
+DB_FILE="$HOME/.config/b3.sqlite"
+BACKUP_DIR="${HOME}/backups/$(hostname)/b3_db"
 
 mkdir -p ${BACKUP_DIR}
 
 dt=$(date +"%Y-%m-%d")
-BACKUP_FILE="${BACKUP_DIR}/b3_db_${server}_${dt}.sqlite"
-LOG_FILE="${BACKUP_DIR}/b3_db_${server}_${dt}.log"
+BACKUP_FILE="${BACKUP_DIR}/b3_${dt}.sqlite"
+LOG_FILE="${BACKUP_DIR}/b3_${dt}.sqlite.log"
 
 echo "starting backup of ${DB_FILE} into file ${BACKUP_FILE}" >${LOG_FILE}
 sqlite3 "${DB_FILE}" ".backup '${BACKUP_FILE}'" &>>${LOG_FILE}

@@ -1,5 +1,5 @@
 [Unit]
-Description=UrT 4.3 B3
+Description=UrT 4.3 B3 Bot
 After=urt43.service
 
 [Install]
@@ -7,8 +7,12 @@ WantedBy=default.target
 
 [Service]
 Type=exec
+CPUAffinity=1
 WorkingDirectory=%h/b3
-ExecStart=taskset -c 1 %h/b3/.venv/bin/python -B -u -m b3 -c %h/.config/b3/b3_ts.ini
-TimeoutSec=600
+ExecStart=%h/b3/.venv/bin/python -B -u -m b3 -c %h/.config/b3.ini
+TimeoutSec=300
 Restart=on-failure
+RestartSec=5
+RestartSteps=5
+RestartMaxDelaySec=30
 LimitNOFILE=5000

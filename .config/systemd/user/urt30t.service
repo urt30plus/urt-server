@@ -8,8 +8,11 @@ WantedBy=default.target
 
 [Service]
 Type=exec
-Restart=on-failure
-RestartSec=3
-EnvironmentFile=%h/.config/urt30t/env.ts
+CPUAffinity=2
+EnvironmentFile=%h/.config/urt30t.env
 WorkingDirectory=%h/urt30t
-ExecStart=taskset -c 2 %h/urt30t/.venv/bin/python -m urt30t
+ExecStart=%h/urt30t/.venv/bin/python -m urt30t
+Restart=on-failure
+RestartSec=5
+RestartSteps=5
+RestartMaxDelaySec=30

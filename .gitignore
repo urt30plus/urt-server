@@ -4,9 +4,7 @@
 b3/
 backups/
 logs/
-servers/
+server/
 share/
 temp/
 urt30t/
-
-!.config/systemd/user/*
