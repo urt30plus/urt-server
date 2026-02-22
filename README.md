@@ -25,8 +25,8 @@ git config --global user.email urt30plus@gmail.com \
   && mv $HOME/temp/* . \
   && mv $HOME/temp/.* . \
   && echo ". \$HOME/.config/urt30plus/env" >> .profile \
-  && git clone git clone git@github.com:urt30plus/b3.git \ 
-  && git clone git clone git@github.com:urt30plus/urt30t.git \ 
+  && git clone git@github.com:urt30plus/b3.git \ 
+  && git clone git@github.com:urt30plus/urt30t.git \ 
   && curl -LsSf https://astral.sh/uv/install.sh | sh \
   && . $HOME/.profile
   && uv python install --compile-bytecode 3.14.3 \
