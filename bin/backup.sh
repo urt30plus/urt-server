@@ -9,8 +9,7 @@ cp --verbose ${HOME}/.ssh/* "${backup_dir}"
 cp --verbose /etc/sysctl.conf "${backup_dir}"
 crontab -l >"${backup_dir}/crontab.txt"
 
-cp --verbose ~/.config/b3.ini "${backup_dir}"
-cp --verbose ~/.config/urt30t.env "${backup_dir}"
+cp --verbose -R ~/.config/ "${backup_dir}/config/"
 cp --verbose $HOME/server/q3ut4/*.{cfg,txt} "${backup_dir}"
 
 backup_file="/tmp/backup_$(date +'%W-%w').tar.gz"
