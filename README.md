@@ -79,3 +79,49 @@ systemctl --user enable --now b3
 systemctl --user enable --now urt30t
 ```
 
+## Network Tuning
+
+The network buffer default sizes are pretty small on Linux. Even though the
+game packets are pretty small, on a busy server the default 200k buffers can
+sometimes lead to packets being dropped.
+
+### UDP Statistics/Errors
+
+The following command will show send/receive buffer related errors:
+
+    netstat -ansu
+
+### UDP Settings
+
+The following are just an example of suggested changes.
+
+#### Before (Debian 13/Trixie)
+
+```
+net.core.netdev_max_backlog=1000
+net.core.rmem_default=212992
+net.core.rmem_max=212992
+net.core.wmem_default=212992
+net.core.wmem_max=212992
+```
+
+#### After (/etc/sysctl.d/local.conf)
+
+```
+net.core.netdev_max_backlog = 2000
+net.core.rmem_default = 524288
+net.core.rmem_max = 524288
+net.core.wmem_default = 524288
+net.core.wmem_max = 524288
+```
+
+#### Misc Notes
+
+Start with small increases and if buffer errors are still significant
+then use the values below to tune the sizes as needed.
+
+```
+1MB = 1048576 (1024x1024)
+2MB = 2097152
+4MB = 4194304
+```
