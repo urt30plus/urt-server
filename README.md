@@ -32,8 +32,7 @@ git config --global user.email urt30plus@gmail.com \
   && . $HOME/.profile
   && uv python install --compile-bytecode 3.14.3 \
   && cd $HOME/b3 \
-  && uv venv \
-  && uv pip install -r requirements.txt \
+  && uv sync \
   && cd $HOME/urt30t \
   && uv sync
 ```
