@@ -28,12 +28,15 @@ git config --global user.email urt30plus@gmail.com \
   && echo '. "$HOME/.config/urtadmin.env"' >> .profile \
   && git clone git@github.com:urt30plus/b3.git \ 
   && git clone git@github.com:urt30plus/urt30t.git \ 
+  && git clone git@github.com:urt30plus/urt30discord.git \ 
   && curl -LsSf https://astral.sh/uv/install.sh | sh \
   && . $HOME/.profile
   && uv python install --compile-bytecode 3.14.3 \
   && cd $HOME/b3 \
   && uv sync \
   && cd $HOME/urt30t \
+  && uv sync \
+  && cd $HOME/urt30discord \
   && uv sync
 ```
 
@@ -76,6 +79,7 @@ systemctl --user daemon-reload
 systemctl --user enable --now urt43
 systemctl --user enable --now b3
 systemctl --user enable --now urt30t
+systemctl --user enable --now urt30discord
 ```
 
 ## Network Tuning
