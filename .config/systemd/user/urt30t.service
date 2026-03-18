@@ -1,6 +1,5 @@
 [Unit]
 Description=UrT 4.3 Game Bot
-AssertPathExists=%h/urt30t
 After=urt43.service
 
 [Install]
@@ -12,7 +11,8 @@ CPUAffinity=1-2
 Environment=UV_COMPILE_BYTECODE=1 UV_NO_DEV=1 UV_FROZEN=1 PYTHONUNBUFFERED=1
 WorkingDirectory=%h/urt30t
 ExecStartPre=-git pull
-ExecStart=%h/.local/bin/uv run -m urt30t %h/.config/urt30t.toml
+ExecStartPre=-%h/.local/bin/uv sync
+ExecStart=%h/urt30t/.venv/bin/python -m urt30t %h/.config/urt30t.toml
 Restart=on-failure
 RestartSec=5
 RestartSteps=5
