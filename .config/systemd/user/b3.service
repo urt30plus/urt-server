@@ -7,9 +7,11 @@ WantedBy=default.target
 
 [Service]
 Type=exec
-CPUAffinity=1
+CPUAffinity=1-2
+Environment=UV_COMPILE_BYTECODE=1 UV_NO_DEV=1 UV_FROZEN=1 PYTHONUNBUFFERED=1
 WorkingDirectory=%h/b3
-ExecStart=%h/b3/.venv/bin/python -B -u -m b3 -c %h/.config/b3.ini
+ExecStartPre=-git pull
+ExecStart=%h/.local/bin/uv run -m b3 -c %h/.config/b3.ini
 TimeoutSec=300
 Restart=on-failure
 RestartSec=5
