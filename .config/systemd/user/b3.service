@@ -1,9 +1,11 @@
 [Unit]
 Description=UrT 4.3 B3 Bot
 After=urt43.service
+StartLimitIntervalSec=120
+StartLimitBurst=20
 
 [Install]
-WantedBy=default.target
+WantedBy=multi-user.target
 
 [Service]
 Type=exec
@@ -16,6 +18,4 @@ ExecStart=%h/b3/.venv/bin/python -m b3 -c %h/.config/b3.ini
 TimeoutSec=300
 Restart=on-failure
 RestartSec=5
-RestartSteps=5
-RestartMaxDelaySec=30
 LimitNOFILE=5000
