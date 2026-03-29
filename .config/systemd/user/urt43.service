@@ -1,9 +1,11 @@
 [Unit]
 Description=UrT 4.3
 After=network.target
+StartLimitIntervalSec=120
+StartLimitBurst=20
 
 [Install]
-WantedBy=default.target
+WantedBy=multi-user.target
 
 [Service]
 Type=exec
@@ -13,9 +15,9 @@ ExecStartPre=-rm -vf %h/server/q3ut4/games.log
 ExecStartPre=-touch /tmp/games.log
 ExecStartPre=-ln -s /tmp/games.log %h/server/q3ut4/games.log
 ExecStart=%h/share/UrT-Ded.x86_64 +set fs_game q3ut4 +set fs_basepath %h/share/UrbanTerror43 +set fs_homepath %h/server +set dedicated 2 +set net_port $URT_PORT +set com_hunkmegs 512 +set ttycon 0 +exec server.cfg
+# uncomment below if using FTW server binaries
+#ExecStart=%h/share/gameserver-urt run %h/share/UrT-Ded.x86_64 +set dedicated 2 +set fs_basepath %h/share/UrbanTerror43 +set fs_homepath %h/server +set net_port $URBAN_TERROR_PORT +set ttycon 0 +exec server.cfg
 Restart=on-failure
 RestartSec=5
-RestartSteps=15
-RestartMaxDelaySec=60
 TimeoutSec=30
 LimitNOFILE=5000
